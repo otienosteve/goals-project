@@ -1,0 +1,17 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6">
+
+    <ul *ngFor="let goal of goals; let i =index;">
+        <li appStrikethrough>{{goal.name}}</li>
+        <button (click)="getDetails(i)" class="btn-primary btn">Get Details</button>
+        <app-goal-detail *ngIf="goals[i].showDescription" [goals]="goals" [indx]="i" (doneWith)="isComplete($event,i)" ></app-goal-detail>
+    </ul>
+    <p *ngIf="goals.length>5">Too Many Goals</p>
+</div>
+<div class="col-md-6">
+
+    <app-goal-form></app-goal-form>
+</div>    
+</div>
+</div>
