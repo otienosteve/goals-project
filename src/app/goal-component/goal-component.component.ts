@@ -23,9 +23,12 @@ export class GoalComponentComponent implements OnInit {
     }
 
   }
+<<<<<<< HEAD
   addGoal(val:Goal){
     val.id=this.goals.length+1
     this.goals.push(val);
     console.log(val)
   }
+=======
+>>>>>>> f448e2db68e8becbb5e373c32e26a732880dca66
 }
