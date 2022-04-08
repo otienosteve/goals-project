@@ -12,10 +12,12 @@ export class GoalFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-passGoal(val1:string,val2:string){
-  this.newGoal.description=val2;
-  this.newGoal.name=val1;
+passGoal(val1:any,val2:any){
+  this.newGoal.description=val2.value;
+  this.newGoal.name=val1.value;
   this.addedGoal.emit(this.newGoal);
+  val1.value="";
+  val2.value=""
   this.newGoal= new Goal(1,'45',"500");
 }
 }
